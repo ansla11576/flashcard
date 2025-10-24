@@ -1,0 +1,65 @@
+<!-- history.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>풀이 기록</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .history-block {
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin: 20px auto;
+      max-width: 600px;
+      border-radius: 6px;
+    }
+    .history-block h3 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">홈</a></li>
+      <li><a href="one.html">1문제 풀기</a></li>
+      <li><a href="three.html">3문제 풀기</a></li>
+      <li><a href="five.html">5문제 풀기</a></li>
+      <li><a href="history.html" class="active">풀이 기록</a></li>
+      <li><a href="login.html">로그인</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>오늘 푼 문제 기록</h1>
+    <div id="history"></div>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    function loadHistory() {
+      const container = document.getElementById("history");
+      const history = JSON.parse(localStorage.getItem("quizHistory") || "[]");
+
+      if (history.length === 0) {
+        container.innerHTML = "<p>풀이 기록이 없습니다.</p>";
+        return;
+      }
+
+      container.innerHTML = history.map(record => `
+        <div class="history-block">
+          <h3>문제 ${record.questionId}</h3>
+          <p><strong>문제:</strong> ${record.question}</p>
+          <p><strong>선택한 답:</strong> ${record.selected}</p>
+          <p><strong>정답:</strong> ${record.answer}</p>
+          <p><strong>결과:</strong> ${record.isCorrect ? "✅ 정답" : "❌ 오답"}</p>
+          <p><strong>풀이 시간:</strong> ${new Date(record.timestamp).toLocaleString()}</p>
+        </div>
+      `).join("");
+    }
+
+    window.onload = loadHistory;
+  </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!-- one.html -->
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>1문제 풀기</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">홈</a></li>
+      <li><a href="one.html" class="active">1문제 풀기</a></li>
+      <li><a href="three.html">3문제 풀기</a></li>
+      <li><a href="five.html">5문제 풀기</a></li>
+      <li><a href="history.html">풀이 기록</a></li>
+      <li><a href="login.html">로그인</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>오늘의 문제 (1문제)</h1>
+    <div id="question-container">
+      <p>문제를 불러오는 중입니다...</p>
+    </div>
+    <button onclick="loadTodayQuestions('question-container', 1)">🔄 다시 풀기</button>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    loadTodayQuestions("question-container", 1); // 1문제만 로딩
+  </script>
+</body>
+</html>

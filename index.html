@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>퀴즈 메인</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .menu-buttons {
+      display: flex;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .menu-buttons a {
+      display: inline-block;
+      padding: 15px 25px;
+      background: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+    .menu-buttons a:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html" class="active">홈</a></li>
+      <li><a href="one.html">1문제 풀기</a></li>
+      <li><a href="three.html">3문제 풀기</a></li>
+      <li><a href="five.html">5문제 풀기</a></li>
+      <li><a href="history.html">풀이 기록</a></li>
+      <li><a href="login.html">로그인</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>오늘의 퀴즈에 오신 것을 환영합니다 🎉</h1>
+    <p>아래에서 원하는 문제 개수를 선택해 시작하세요.</p>
+
+    <div class="menu-buttons">
+      <a href="one.html">1문제 풀기</a>
+      <a href="three.html">3문제 풀기</a>
+      <a href="five.html">5문제 풀기</a>
+    </div>
+  </main>
+</body>
+</html>
